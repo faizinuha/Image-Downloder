@@ -1,7 +1,18 @@
 {
   "action": {
     "default_icon": "icon.jpg",
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_title": "Instagram Media Downloader",
+    "login": {
+      "default_icon": "icon.jpg",
+      "default_popup": "index.html",
+      "default_title": "Instagram Media Downloader"
+    },
+    "logout": {
+      "default_icon": "icon.jpg",
+      "default_popup": "index.html",
+      "default_title": "Instagram Media Downloader"
+    }
   },
   "background": {
     "service_worker": "background.js"

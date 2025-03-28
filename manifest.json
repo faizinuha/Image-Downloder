@@ -1,0 +1,45 @@
+{
+  "action": {
+    "default_icon": "icon.jpg",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "context.js"
+      ],
+      "matches": [
+        "*://www.instagram.com/*"
+      ]
+    }
+  ],
+  "description": "Tambahkan tombol download untuk gambar dan video di Instagram.",
+  "host_permissions": [
+    "*://*.fbcdn.net/*",
+    "*://*.instagram.com/*"
+  ],
+  "icons": {
+    "128": "icon.jpg",
+    "16": "icon.jpg",
+    "48": "icon.jpg"
+  },
+  "manifest_version": 3,
+  "name": "Instagram Media Downloader",
+  "permissions": [
+    "downloads"
+  ],
+  "version": "1.0",
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://www.instagram.com/*"
+      ],
+      "resources": [
+        "button-download.png"
+      ]
+    }
+  ]
+}

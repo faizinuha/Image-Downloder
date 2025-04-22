@@ -1,18 +1,12 @@
 {
   "action": {
-    "default_icon": "icon.jpg",
-    "default_popup": "index.html",
-    "default_title": "Instagram Media Downloader",
-    "login": {
-      "default_icon": "icon.jpg",
-      "default_popup": "index.html",
-      "default_title": "Instagram Media Downloader"
+    "default_icon": {
+      "128": "icons/icon.jpg",
+      "16": "icons/icon.jpg",
+      "48": "icons/icon.jpg"
     },
-    "logout": {
-      "default_icon": "icon.jpg",
-      "default_popup": "index.html",
-      "default_title": "Instagram Media Downloader"
-    }
+    "default_popup": "index.html",
+    "default_title": "Social Media Downloader"
   },
   "background": {
     "service_worker": "background.js"
@@ -20,36 +14,60 @@
   "content_scripts": [
     {
       "js": [
-        "context.js"
+        "Platfroms/instagram.js"
       ],
       "matches": [
-        "*://www.instagram.com/*"
+        "*://*.instagram.com/*"
+      ]
+    },
+    {
+      "js": [
+        "Platfroms/facebook.js"
+      ],
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.fb.com/*"
+      ]
+    },
+    {
+      "js": [
+        "Platfroms/tiktok.js"
+      ],
+      "matches": [
+        "*://*.tiktok.com/*"
       ]
     }
   ],
-  "description": "Tambahkan tombol download untuk gambar dan video di Instagram.",
+  "description": "Download media from Instagram, Facebook, and TikTok",
   "host_permissions": [
     "*://*.fbcdn.net/*",
-    "*://*.instagram.com/*"
+    "*://*.instagram.com/*",
+    "*://*.facebook.com/*",
+    "*://*.fb.com/*",
+    "*://*.tiktok.com/*"
   ],
   "icons": {
-    "128": "icon.jpg",
-    "16": "icon.jpg",
-    "48": "icon.jpg"
+    "128": "icons/icon.jpg",
+    "16": "icons/icon.jpg",
+    "48": "icons/icon.jpg"
   },
   "manifest_version": 3,
-  "name": "Instagram Media Downloader",
+  "name": "Social Media Downloader",
   "permissions": [
     "downloads"
   ],
-  "version": "1.0",
+  "version": "1.36.39",
   "web_accessible_resources": [
     {
       "matches": [
-        "*://www.instagram.com/*"
+        "*://*.instagram.com/*",
+        "*://*.facebook.com/*",
+        "*://*.tiktok.com/*"
       ],
       "resources": [
-        "button-download.png"
+        "icon/*.jpeg",
+        "icon/*.jpg",
+        "icon/*.png"
       ]
     }
   ]
